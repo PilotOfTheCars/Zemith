@@ -1,0 +1,25 @@
+{
+  "schoolYear": "2025-2026",
+  "holidays": {
+    "semesterBreak": {
+      "start": "2026-02-01",
+      "end": "2026-02-10"
+    },
+    "easterBreak": {
+      "start": "2026-04-12",
+      "end": "2026-04-18"
+    },
+    "summerBreak": {
+      "start": "2026-07-01",
+      "end": "2026-09-01"
+    }
+  },
+  "importantDates": [
+    { "date": "2025-09-05", "event": "School Year Start" },
+    { "date": "2025-10-26", "event": "National Day" },
+    { "date": "2025-11-01", "event": "All Saints' Day" },
+    { "date": "2025-12-08", "event": "Immaculate Conception" },
+    { "date": "2026-01-07", "event": "School Resume" },
+    { "date": "2026-03-20", "event": "Spring Equinox" }
+  ]
+}
