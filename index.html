@@ -3,38 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zemith Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Zemith Student OS Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+        .dark-mode {
+            background-color: #1e293b;
+            color: white;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="owl_logo.png" alt="Owl Logo">
-        </div>
-        <nav>
+<body class="bg-gray-100 dark:bg-gray-800">
+    <div class="flex h-screen">
+
+        <!-- Subject Nav -->
+        <div class="w-1/4 p-4 bg-white dark:bg-gray-900 shadow">
+            <h2 class="font-bold text-lg">Subjects</h2>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700">Math</a></li>
+                <li><a href="#" class="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700">Science</a></li>
+                <li><a href="#" class="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700">History</a></li>
+                <li><a href="#" class="block p-2 hover:bg-gray-200 dark:hover:bg-gray-700">Language Arts</a></li>
             </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="chat-interface">
-            <h2>Chat</h2>
-            <div class="chat-window">
-                <!-- Chat messages will appear here -->
+        </div>
+
+        <!-- Chat Section -->
+        <div class="w-1/2 p-4">
+            <h2 class="font-bold text-lg">Chat</h2>
+            <div class="bg-white dark:bg-gray-900 shadow p-4 h-96 overflow-auto">
+                <div id="chat-messages" class="space-y-2"></div>
+                <input type="text" id="chat-input" placeholder="Type a message" class="mt-2 p-2 w-full border border-gray-300 dark:border-gray-700 rounded">
+                <button onclick="sendMessage()" class="mt-2 bg-blue-500 text-white p-2 rounded">Send</button>
             </div>
-            <input type="text" placeholder="Type your message...">
-            <button>Send</button>
-        </section>
-        <section class="game-launcher">
-            <h2>Launch Game</h2>
-            <button>Start Game</button>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2026 Zemith Game. All rights reserved.</p>
-    </footer>
+        </div>
+
+        <!-- Toolbox -->
+        <div class="w-1/4 p-4 bg-white dark:bg-gray-900 shadow">
+            <h2 class="font-bold text-lg">Toolbox</h2>
+            <div class="mt-4">
+                <h3 class="font-semibold">Flashcards</h3>
+                <button class="w-full p-2 mb-2 bg-green-500 text-white rounded">Open Flashcards</button>
+
+                <h3 class="font-semibold">Citation Tool</h3>
+                <button class="w-full p-2 mb-2 bg-blue-500 text-white rounded">Open Citation Tool</button>
+
+                <h3 class="font-semibold">Shared To-Do List</h3>
+                <button class="w-full p-2 mb-2 bg-yellow-500 text-white rounded">Open To-Do List</button>
+
+                <h3 class="font-semibold">Game Launcher</h3>
+                <button class="w-full p-2 mb-2 bg-red-500 text-white rounded">Open Game Vault</button>
+            </div>
+
+            <h3 class="font-semibold mt-4">Mode Switcher</h3>
+            <label class="flex items-center">
+                <input type="checkbox" id="mode-switcher" class="mr-2" onchange="toggleMode()">
+                <span>Switch to Home Mode</span>
+            </label>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chat-input');
+            const messagesDiv = document.getElementById('chat-messages');
+            if (input.value) {
+                const message = document.createElement('div');
+                message.innerText = input.value;
+                messagesDiv.appendChild(message);
+                input.value = '';
+                messagesDiv.scrollTop = messagesDiv.scrollHeight; 
+            }
+        }
+    </script>
 </body>
 </html>
