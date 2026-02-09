@@ -1,0 +1,45 @@
+.bg-neon {
+  background-color: #1c1c1e;
+}
+
+.text-neon {
+  color: #e01e6b;
+  animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+  0% {
+    text-shadow: 0 0 5px #e01e6b, 0 0 10px #e01e6b, 0 0 15px #e01e6b;
+  }
+  100% {
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #e01e6b;
+  }
+}
+
+/* School Mode */
+.school-mode {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Home Mode */
+.home-mode {
+  background-color: #282c34;
+  color: #fff;
+}
+
+/* Responsive Layout */
+@media (min-width: 640px) {
+  .column {
+    flex: 1;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .three-column-layout {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
