@@ -1,0 +1,15 @@
+# Configuration for GitHub Pages
+
+# Title of the website
+title: "Welcome to Zemith"
+
+# Description of the website
+description: "A static website for the Zemith project."
+
+# Base URL for the website
+baseurl: "/Zemith"
+
+# Theme settings (optional)
+theme: "minima"
+
+# Other settings can be added as needed
